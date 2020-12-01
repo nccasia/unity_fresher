@@ -3,7 +3,7 @@
 Table of contents
 
 1. [`var`, `let` and `const`](#1-var-let-and-const)
-2. [Button] Button text here ?
+2. [Button] (#2 Button text here ?)
 
 ---
 
