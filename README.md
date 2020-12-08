@@ -14,7 +14,7 @@ Practice check list for NCC Unity freshers
 [Lesson 09: Programming_CSharp_event_delegate_Action_UnityAction](./Assets/Lesson9)   
 [Lesson 10: Programming_Design_Patterns](./Assets/Lesson10)   
 [Lesson 11: Programming_Debugging](./Assets/Lesson11)   
-[Lesson 12: Programming_Async_Callback](./Lesson12)   
+[Lesson 12: Programming_Async_Callback](./Assets/Lesson12)   
 [Lesson 13: Utility_TexturePacker](./Assets/Lesson13)
 
 
