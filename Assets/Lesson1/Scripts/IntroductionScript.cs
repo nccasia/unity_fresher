@@ -26,11 +26,22 @@ namespace Assets.Lesson1.Scripts
     {
         public Button btnToastDemo;
         public Button btnVnTac;
+        public Button btnBabyShark;
+
+        public AudioClip musicFile;
 
         void Start()
         {
             btnToastDemo.onClick.AddListener(MakeToast);
+            btnBabyShark.onClick.AddListener(PlayBabyShark);
             btnVnTac.onClick.AddListener(InitVnTacSDK);
+        }
+
+        private void PlayBabyShark()
+        {
+            var audioSource = FindObjectOfType<AudioSource>();
+
+            audioSource.PlayOneShot(musicFile);
         }
 
         // Update is called once per frame
