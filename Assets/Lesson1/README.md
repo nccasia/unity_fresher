@@ -3,9 +3,9 @@
 Table of contents
 
 1. [Game Engine là gì ?](#1-game-engine-l%C3%A0-g%C3%AC-)
-2. [Phân loại Game Engine](#2-Phan-loai)
+2. [Phân loại Game Engine](#2-ph%C3%A2n-lo%E1%BA%A1i)
 3. [Unity](#3-Unity)
-4. [Những thành phần cơ bản của một GE] (#4-nh%E1%BB%AFng-th%C3%A0nh-ph%E1%BA%A7n-c%C6%A1-b%E1%BA%A3n-c%E1%BB%A7a-m%E1%BB%99t-ge)
+4. [Những thành phần cơ bản của một GE](#4-nh%E1%BB%AFng-th%C3%A0nh-ph%E1%BA%A7n-c%C6%A1-b%E1%BA%A3n-c%E1%BB%A7a-m%E1%BB%99t-ge)
 
 ---
 
