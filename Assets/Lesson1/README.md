@@ -19,12 +19,20 @@ Game Engine (GE): Tập hợp thư viện phục vụ mục đích làm game.
 Dựa trên nhiều yếu tố:
 1. Hệ điều hành: Mobile, PC, PS, Html5 (H5), Playable Ads, ...
 2. Phong cách chơi: RPGMaker chuyên về dòng RPG, Visual novel, GameMaker cho dòng 2D, ... 
-3. Chuyên nghiệp: Unreal, Unity, Cocos, GoDot, ...
+3. Online / Offline: Đừng dùng mấy engine không nổi tiếng làm game online
+4. Chuyên nghiệp: Unreal, Unity, Cocos, GoDot, ...
 
 ---
 
 ## 3. Unity
 1. Ưu: Mạnh + dễ tiếp cận + dễ kiếm việc làm ở VN
 2. Nhược: Thay đổi nhanh, quá nhiều version + Không có studio siêu khủng dùng.
+
+## 4. Những thành phần cơ bản của một GE
+1. Đồ họa: 2D, 3D
+2. Chuyển động (Animation)
+3. Âm thanh
+4. Quản lý dòng thời gian / Timing
+4. Quản lý & thao tác các `đối tượng` trên màn hình
 
 
