@@ -4,7 +4,8 @@ Table of contents
 
 1. [Game Engine là gì ?](#1-game-engine-l%C3%A0-g%C3%AC-)
 2. [Phân loại Game Engine](#2-Phan-loai)
-2. [Unity](#3-Unity)
+3. [Unity](#3-Unity)
+4. [Những thành phần cơ bản của một GE] (#4-nh%E1%BB%AFng-th%C3%A0nh-ph%E1%BA%A7n-c%C6%A1-b%E1%BA%A3n-c%E1%BB%A7a-m%E1%BB%99t-ge)
 
 ---
 
@@ -15,7 +16,7 @@ Game Engine (GE): Tập hợp thư viện phục vụ mục đích làm game.
 
 ---
 
-## 2. Phan loai
+## 2. Phân loại
 Dựa trên nhiều yếu tố:
 1. Hệ điều hành: Mobile, PC, PS, Html5 (H5), Playable Ads, ...
 2. Phong cách chơi: RPGMaker chuyên về dòng RPG, Visual novel, GameMaker cho dòng 2D, ... 
