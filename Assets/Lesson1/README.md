@@ -13,14 +13,14 @@ Table of contents
 https://en.wikipedia.org/wiki/Game_engine
 
 Game Engine (GE): Tập hợp thư viện phục vụ mục đích làm game.
-```
+---
 
 ## 2. Phan loai
 Dựa trên nhiều yếu tố:
 1. Hệ điều hành: Mobile, PC, PS, Html5 (H5), Playable Ads, ...
 2. Phong cách chơi: RPGMaker chuyên về dòng RPG, Visual novel, GameMaker cho dòng 2D, ... 
 3. Chuyên nghiệp: Unreal, Unity, Cocos, GoDot, ...
-
+---
 
 ## 3. Unity
 Ưu: Mạnh + dễ tiếp cận + dễ kiếm việc làm ở VN
