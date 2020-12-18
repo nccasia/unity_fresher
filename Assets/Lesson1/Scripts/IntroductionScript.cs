@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Reflection.Emit;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Lesson1.Scripts
 {
-    public class LoginCallback : AndroidJavaProxy
+    public class SdkLoginCallback : AndroidJavaProxy
     {
         public event Action<bool, string, string, int, AndroidJavaObject> OnLoginCallback;
-        public LoginCallback() : base("vn.vntac.sdk.listener.OnLoginListener") { }
+        public SdkLoginCallback() : base("com.unity3d.player.ISdkLoginCallback") { }
 
-        public void onResponse(bool isOK, String response, String message, int errorCode, AndroidJavaObject user)
+        public void callback(bool isOK, string response, string message, int errorCode, AndroidJavaObject user)
         {
             Debug.Log("xxx.Unity.onResponse " + isOK + ";;; " + response + ";;; " + user.ToString());
 
@@ -17,24 +18,35 @@ namespace Assets.Lesson1.Scripts
         }
     }
 
-    public class User : AndroidJavaClass
-    {
-        public User() : base("vn.vntac.sdk.model.User") {}
-    }
- 
     public class IntroductionScript : MonoBehaviour
     {
         public Button btnToastDemo;
         public Button btnVnTac;
         public Button btnBabyShark;
+        public Button btnBuyItem;
+        public Text lblUserName;
 
         public AudioClip musicFile;
 
+        private AndroidJavaObject unityActivity;
         void Start()
         {
             btnToastDemo.onClick.AddListener(MakeToast);
             btnBabyShark.onClick.AddListener(PlayBabyShark);
-            btnVnTac.onClick.AddListener(InitVnTacSDK);
+            btnVnTac.onClick.AddListener(startSignin);
+            btnBuyItem.onClick.AddListener(BuyItem);
+
+            unityActivity = GetCurrentActivity();
+
+            var loginCallback = new SdkLoginCallback();
+            loginCallback.OnLoginCallback += LoginCallback_OnLoginCallback;
+            unityActivity.Call("InitSDK", loginCallback);
+        }
+
+        private void LoginCallback_OnLoginCallback(bool isOK, string response, string message, int errorCode, AndroidJavaObject user)
+        {
+            Debug.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx " + response);
+            lblUserName.text = user.Call<string>("getName");
         }
 
         private void PlayBabyShark()
@@ -42,12 +54,6 @@ namespace Assets.Lesson1.Scripts
             var audioSource = FindObjectOfType<AudioSource>();
 
             audioSource.PlayOneShot(musicFile);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
 
         private void MakeToast()
@@ -59,6 +65,7 @@ namespace Assets.Lesson1.Scripts
 #endif
         }
 
+#if UNITY_ANDROID
         private void ShowAndroidToast(string msg)
         {
             AndroidJavaClass toastClass = new AndroidJavaClass("android.widget.Toast");
@@ -75,44 +82,11 @@ namespace Assets.Lesson1.Scripts
             toastObject.Call("show");
         }
 
-        private void InitVnTacSDK()
+        private void startSignin()
         {
             try
             {
-                string key_base64_endcode =
-                    "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA29qRBoq/lvn884LWBnfMxL946NyL5rPhQdzrcRugdQLuUnyq/kfvvdY9AUBfVUa+bRLF6wOEIfWdcH5Xj/6HO2A8aBqUnWI42yLCiVOritB6celuexoE9UIqpVq/CgvnPyBu7hniPURpqFvbpp7gnyzFUg0EUjTUsgYHNtYRMDYWDlji57mAJrT917bD4PUOHBmjPN+qwgbb1sYpNXwcNyjATFBFpwkmxEzj7/mcZDOUohAwHSg0WPmJd0kMuyjMM3Ts7ZtdV2he08Zopauc8qlTQig3jvoIYeurs78uE7lCXnVLb3fiaKazeptOzPAy7yzx8WqJvRP7YwAraJc/iwIDAQAB";
-                string productID = "android.test.purchased";
-
-                var context = GetApplicationContext();
-                var currentActivity = GetCurrentActivity();
-
-
-                //AndroidJavaClass vntacSDK = new AndroidJavaClass("vn.vntac.sdk.VNTacSDK");
-                AndroidJavaObject vntacSDK = new AndroidJavaObject("vn.vntac.sdk.VNTacSDK", new object[] { currentActivity });
-                AndroidJavaObject vntacUser = new AndroidJavaObject("vn.vntac.sdk.model.User");
-
-
-                Debug.Log("xxx.Unity.Done CONSTRUCTOR");
-
-                vntacSDK.Call("initInAppBilling", new object[] {key_base64_endcode});
-
-                Debug.Log("xxx.Unity.Done === initInAppBilling");
-
-                var loginObj = new LoginCallback();
-                loginObj.OnLoginCallback += OnLoginCallback;
-                vntacSDK.Call("login", new object[]{currentActivity, loginObj });
-
-                Debug.Log("xxx.Unity.Done === login setting");
-
-                vntacSDK.Call("checkSessionUser");
-
-                Debug.Log("xxx.Unity.Done checkSessionUser");
-
-                //vntacSDK.Call("startSignin");
-
-                //Debug.Log("xxx.Unity.Done startSignin");
-
-                
+                unityActivity.Call("startSignin");
 
             }
             catch (Exception ex)
@@ -122,27 +96,10 @@ namespace Assets.Lesson1.Scripts
             }
         }
 
-        private void OnLoginCallback(bool isOK, string response, string message, int errorCode, AndroidJavaObject user)
+        private void BuyItem()
         {
-            ShowAndroidToast(response);
-
-            Debug.Log("xxx.Unity callback " + isOK + ", " + response);
-        }
-
-
-#if UNITY_ANDROID
-        public static AndroidJavaObject GetApplicationContext()
-        {
-
-            using (AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-            {
-                using (AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity"))
-                {
-                    return jo.Call<AndroidJavaObject>("getApplicationContext");
-                }
-            }
-
-            return null;
+            const string productID = "android.test.purchased";
+            unityActivity.Call("buy", new object[]{productID, 1, "1234", "extra_data"} );
         }
 
         public static AndroidJavaObject GetCurrentActivity()
