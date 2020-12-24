@@ -1,32 +1,18 @@
-# Unity UI: Common components
+# Unity UI: Movement in game
 
 Table of contents
 
-1. [Button](#1-Button)
-2. [Label](#2-Label)
+1. [Movement - Chuyển động](#1-Movement)
+2. [Tween](#2-Tween)
 
 ---
 
-## 1. Button
+## 1. Movement
 
-### 1.1 Var
+Là sự thay đổi vị trí (Position) của GameObject trong không gian (2D, 3D, ...)
 
-#### Scope: globally scoped or function/locally scoped
+Các thư viện liên quan: Vector2, Vector3
 
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
-
-
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
-}
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
-```
-
-## 2. Label
+## 2. Tween
 Label is 
 
