@@ -17,4 +17,8 @@ Practice check list for NCC Unity freshers
 [Lesson 12: Programming_Async_Callback](./Assets/Lesson12)   
 [Lesson 13: Utility_TexturePacker](./Assets/Lesson13)
 
+[Lesson 14: Example Tetris](./Assets/XTetris)
+
+[Lesson 15: Example Tower Defense](./Assets/XTowerDefense)
+
 
