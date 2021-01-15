@@ -2,31 +2,26 @@
 
 Table of contents
 
-1. [Button](#1-Button)
-2. [Label](#2-Label)
+1. [Sound & Audio](#1-Sound-&-Audio)
+2. [Effect](#2-Effect)
+3. [Các control hỗ trợ layout](#3-c%C3%A1c-control-h%E1%BB%97-tr%E1%BB%A3-layout)
+---
+
+## 1. Sound & Audio
+
+### 1.1 Audio Source Component
+### 1.2 Các định dạng hỗ trợ
+### 1.3 Xử lý và phát âm thanh với Script
+### 1.4 Thay đổi file âm thanh
+### 1.5 Play - Pause - Stop
+### 1.6 isPlaying - mute
+
 
 ---
 
-## 1. Button
-
-### 1.1 Var
-
-#### Scope: globally scoped or function/locally scoped
-
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
+## 2. Effect
 
 
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
-}
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
-```
-
-## 2. Label
-Label is 
+### 2.1 Animation
+### 2.2 Particle System
 
