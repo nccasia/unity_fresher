@@ -4,7 +4,7 @@ Table of contents
 
 1. [Sound & Audio](#1-Sound-&-Audio)
 2. [Effect](#2-Effect)
-3. [Các control hỗ trợ layout](#3-c%C3%A1c-control-h%E1%BB%97-tr%E1%BB%A3-layout)
+
 ---
 
 ## 1. Sound & Audio
