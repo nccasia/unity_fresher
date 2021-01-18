@@ -8,10 +8,10 @@ public class Spawner : MonoBehaviour {
 
     void Start() {
         // Spawn initial Group
-        spawnNext();
+        SpawnNext();
     }
 
-    public void spawnNext() {
+    public void SpawnNext() {
         // Random Index
         int i = Random.Range(0, groups.Length);
 

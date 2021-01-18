@@ -6,12 +6,12 @@ public class Group : MonoBehaviour {
     // Time since last gravity tick
     float lastFall = 0;
 
-    bool isValidGridPos() {        
+    bool IsValidGridPos() {        
         foreach (Transform child in transform) {
-            Vector2 v = Grid.roundVec2(child.position);
+            Vector2 v = Grid.RoundVector2(child.position);
 
             // Not inside Border?
-            if (!Grid.insideBorder(v))
+            if (!Grid.InsideBorder(v))
                 return false;
 
             // Block in grid cell (and not part of same group)?
@@ -22,24 +22,29 @@ public class Group : MonoBehaviour {
         return true;
     }
 
-    void updateGrid() {
+    void UpdateGrid() {
         // Remove old children from grid
         for (int y = 0; y < Grid.h; ++y)
+        {
             for (int x = 0; x < Grid.w; ++x)
-                if (Grid.grid[x, y] != null)
-                    if (Grid.grid[x, y].parent == transform)
-                        Grid.grid[x, y] = null;
+            {
+                if (Grid.grid[x, y] != null && Grid.grid[x, y].parent == transform)
+                {
+                    Grid.grid[x, y] = null;
+                }
+            }
+        }
 
         // Add new children to grid
         foreach (Transform child in transform) {
-            Vector2 v = Grid.roundVec2(child.position);
+            Vector2 v = Grid.RoundVector2(child.position);
             Grid.grid[(int)v.x, (int)v.y] = child;
         }        
     }
 
     void Start() {
         // Default position not valid? Then its game over
-        if (!isValidGridPos()) {
+        if (!IsValidGridPos()) {
             Debug.Log("GAME OVER");
             Destroy(gameObject);
         }
@@ -52,9 +57,9 @@ public class Group : MonoBehaviour {
             transform.position += new Vector3(-1, 0, 0);
             
             // See if valid
-            if (isValidGridPos())
+            if (IsValidGridPos())
                 // Its valid. Update grid.
-                updateGrid();
+                UpdateGrid();
             else
                 // Its not valid. revert.
                 transform.position += new Vector3(1, 0, 0);
@@ -66,9 +71,9 @@ public class Group : MonoBehaviour {
             transform.position += new Vector3(1, 0, 0);
             
             // See if valid
-            if (isValidGridPos())
+            if (IsValidGridPos())
                 // Its valid. Update grid.
-                updateGrid();
+                UpdateGrid();
             else
                 // Its not valid. revert.
                 transform.position += new Vector3(-1, 0, 0);
@@ -79,9 +84,9 @@ public class Group : MonoBehaviour {
             transform.Rotate(0, 0, -90);
             
             // See if valid
-            if (isValidGridPos())
+            if (IsValidGridPos())
                 // Its valid. Update grid.
-                updateGrid();
+                UpdateGrid();
             else
                 // Its not valid. revert.
                 transform.Rotate(0, 0, 90);
@@ -94,18 +99,18 @@ public class Group : MonoBehaviour {
             transform.position += new Vector3(0, -1, 0);
 
             // See if valid
-            if (isValidGridPos()) {
+            if (IsValidGridPos()) {
                 // Its valid. Update grid.
-                updateGrid();
+                UpdateGrid();
             } else {
                 // Its not valid. revert.
                 transform.position += new Vector3(0, 1, 0);
 
                 // Clear filled horizontal lines
-                Grid.deleteFullRows();
+                Grid.DeleteRowsIfFull();
 
                 // Spawn next Group
-                FindObjectOfType<Spawner>().spawnNext();
+                FindObjectOfType<Spawner>().SpawnNext();
 
                 // Disable script
                 enabled = false;

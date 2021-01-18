@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class Grid : MonoBehaviour {
     // The Grid itself
@@ -7,25 +8,25 @@ public class Grid : MonoBehaviour {
     public static int h = 20;
     public static Transform[,] grid = new Transform[w, h];
 
-    public static Vector2 roundVec2(Vector2 v) {
+    public static Vector2 RoundVector2(Vector2 v) {
         return new Vector2(Mathf.Round(v.x),
                            Mathf.Round(v.y));
     }
 
-    public static bool insideBorder(Vector2 pos) {
+    public static bool InsideBorder(Vector2 pos) {
         return ((int)pos.x >= 0 &&
                 (int)pos.x < w &&
                 (int)pos.y >= 0);
     }
 
-    public static void deleteRow(int y) {
+    public static void DeleteRow(int y) {
         for (int x = 0; x < w; ++x) {
             Destroy(grid[x, y].gameObject);
             grid[x, y] = null;
         }
     }
 
-    public static void decreaseRow(int y) {
+    public static void DecreaseRow(int y) {
         for (int x = 0; x < w; ++x) {
             if (grid[x, y] != null) {
                 // Move one towards bottom
@@ -38,23 +39,23 @@ public class Grid : MonoBehaviour {
         }
     }
 
-    public static void decreaseRowsAbove(int y) {
+    public static void DecreaseRowsAbove(int y) {
         for (int i = y; i < h; ++i)
-            decreaseRow(i);
+            DecreaseRow(i);
     }
 
-    public static bool isRowFull(int y) {
+    public static bool IsRowFull(int y) {
         for (int x = 0; x < w; ++x)
             if (grid[x, y] == null)
                 return false;
         return true;
     }
 
-    public static void deleteFullRows() {
+    public static void DeleteRowsIfFull() {
         for (int y = 0; y < h; ++y) {
-            if (isRowFull(y)) {
-                deleteRow(y);
-                decreaseRowsAbove(y+1);
+            if (IsRowFull(y)) {
+                DeleteRow(y);
+                DecreaseRowsAbove(y+1);
                 --y;
             }
         }
