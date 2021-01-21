@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        tm = GetComponent<TextMesh>();
+        tm = GetComponentInChildren<TextMesh>();
         _camera = Camera.main;
     }
 
@@ -29,7 +29,6 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game Over");
             Destroy(transform.parent.gameObject);
         }
     }
