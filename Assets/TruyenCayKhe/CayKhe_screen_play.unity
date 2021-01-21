@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &227529694
 Transform:
   m_ObjectHideFlags: 0
@@ -670,7 +670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227529693}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.4, y: 37.4, z: 0}
+  m_LocalPosition: {x: -0.4, y: 31.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 865832832}
@@ -1145,6 +1145,10 @@ MonoBehaviour:
   Light_TrungTam: {fileID: 227529693}
   Light_CoEm: {fileID: 801449465}
   Light_CoChi: {fileID: 203426724}
+  phongbat_2Nha: {fileID: 2100000, guid: 4fe60f0e0cceb8b4292cf8a0aeaf0785, type: 2}
+  phongbat_Island: {fileID: 2100000, guid: e87404aaeda3d604e8dbee4731f35ebb, type: 2}
+  phongbat_Jail: {fileID: 2100000, guid: cbef276b13d0fb14f8b584dfce78d466, type: 2}
+  PhongBat: {fileID: 1509340284}
 --- !u!4 &398714539
 Transform:
   m_ObjectHideFlags: 0
@@ -2531,7 +2535,7 @@ GameObject:
   - component: {fileID: 1509340284}
   - component: {fileID: 1509340283}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Phong_bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
