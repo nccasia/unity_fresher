@@ -32,6 +32,12 @@
             <e p="TweenExample.cs" t="Include" />
           </e>
         </e>
+        <e p="Lesson4" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ActionController.cs" t="Include" />
+            <e p="SlotRenderer.cs" t="Include" />
+          </e>
+        </e>
         <e p="Lesson6" t="Include">
           <e p="Scripts" t="Include">
             <e p="AudioManager.cs" t="Include" />
@@ -70,11 +76,24 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="TruyenCayKhe" t="Include">
+          <e p="ScreenPlay.cs" t="Include" />
+        </e>
         <e p="XTetris" t="Include">
           <e p="Scripts" t="Include">
             <e p="Grid.cs" t="Include" />
             <e p="Group.cs" t="Include" />
             <e p="Spawner.cs" t="Include" />
+          </e>
+        </e>
+        <e p="XTowerDefense" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="BuildPlace.cs" t="Include" />
+            <e p="Bullet.cs" t="Include" />
+            <e p="Health.cs" t="Include" />
+            <e p="Monster.cs" t="Include" />
+            <e p="Spawn.cs" t="Include" />
+            <e p="Tower.cs" t="Include" />
           </e>
         </e>
       </e>
