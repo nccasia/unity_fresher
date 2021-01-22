@@ -22,10 +22,7 @@
     <list default="true" id="68dfe085-2652-455e-8fbd-ab49fab11981" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity_Fresher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity_Fresher/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/Images/Materials/dinh_lang_1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/Images/Materials/dinh_lang_1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/Images/Materials/dinh_lang_2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/Images/Materials/dinh_lang_2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/ScreenPlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/ScreenPlay.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +102,7 @@
       <workItem from="1610722967603" duration="7722000" />
       <workItem from="1611071378059" duration="3851000" />
       <workItem from="1611186751451" duration="4583000" />
-      <workItem from="1611247865157" duration="6947000" />
+      <workItem from="1611247865157" duration="13759000" />
     </task>
     <servers />
   </component>
