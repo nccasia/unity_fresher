@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="68dfe085-2652-455e-8fbd-ab49fab11981" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity_Fresher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity_Fresher/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonStarter/Materials/PolygonStarter_Mat_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonStarter/Materials/PolygonStarter_Mat_01.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/ScreenPlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/ScreenPlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +103,7 @@
       <workItem from="1610722967603" duration="7722000" />
       <workItem from="1611071378059" duration="3851000" />
       <workItem from="1611186751451" duration="4583000" />
-      <workItem from="1611247865157" duration="13759000" />
+      <workItem from="1611247865157" duration="21200000" />
     </task>
     <servers />
   </component>
@@ -128,5 +129,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="302" key="#Notifications/0.0.1920.1040/1920.178.1600.860@0.0.1920.1040" timestamp="1610758683513" />
+    <state x="2299" y="178" width="840" height="1034" key="search.everywhere.popup" timestamp="1611298910234">
+      <screen x="1920" y="178" width="1600" height="860" />
+    </state>
+    <state x="2299" y="178" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/1920.178.1600.860@1920.178.1600.860" timestamp="1611298910234" />
   </component>
 </project>

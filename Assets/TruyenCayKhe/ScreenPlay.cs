@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -37,6 +38,8 @@ public class ScreenPlay : MonoBehaviour
     public Transform chairCoChi;
     public Transform chairNguoiAnh;
 
+    public Transform car;
+
     [Space] [Header("Anh sang")] 
     public GameObject Light_TrungTam;
     public GameObject Light_CoEm;
@@ -45,7 +48,7 @@ public class ScreenPlay : MonoBehaviour
     [Space] [Header("Phong bat")]
     public Material phongbat_NhaChi;
     public Material phongbat_2Nha;
-
+    public Material phongbat_DinhLang;
     public Material phongbat_Island;
     public Material phongbat_Jail;
 
@@ -55,7 +58,8 @@ public class ScreenPlay : MonoBehaviour
     public Transform dance_pos_chong;
 
     public Transform dance_pos_vo;
-    [FormerlySerializedAs("outOfStagePosition")] public Transform outOfStage;
+    public Transform outOfStage;
+    public Transform outOfStageForCar;
     
 
     private WaitForEndOfFrame _eof;
@@ -182,37 +186,94 @@ public class ScreenPlay : MonoBehaviour
         nvEmNav.destination = nvChim.position;
         nvEmDauNav.destination = nvChim.position;
         
+        // Di chuyen ra vi tri Dance
         yield return new WaitForSeconds(4);
         nvEmNav.destination = dance_pos_vo.position;
         nvEmDauNav.destination = dance_pos_vo.position;
         nvChimNav.destination = dance_pos_vo.position;
         
+        // Fix 1 duoc bug tra 1 cuc vang
         yield return new WaitForSeconds(30);
         PhongBat.material = phongbat_Island;
         
         yield return new WaitForSeconds(18);
 
+        // "bay" den gold_island
         nvChimNav.destination = chairCoChi.position;
         nvEmDauNav.destination = chairCoChi.position;
-        
-        
-        yield return new WaitForSeconds(2);
+
+        yield return new WaitForSeconds(1.5f);
         
         nvChimNav.destination = outOfStage.position;
         nvEmDauNav.destination = outOfStage.position;
+
+        // teleport
+        nvEm.position = outOfStage.position;
+        nvEmNav.destination = outOfStage.position;
         
         Music.Pause();
     }
 
     IEnumerator Scene4_giau_co_va_ghen_ty()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
+        
+        // 2 vc Em lai xe oto
+        car.GetComponent<NavMeshAgent>().destination = outOfStageForCar.position;
+        
+        goldBars.SetActive(false);
+        PhongBat.material = phongbat_DinhLang;
+        
+        // Canh cho. bua' + 2 vc Chi
+        yield return new WaitForSeconds(2);
+
+        nvChiDau.GetComponent<NavMeshAgent>().destination = chairCoChi.position;
+        nvAnh.GetComponent<NavMeshAgent>().destination = chairCoChi.position;
+        
+        // Con Thao gio` giau vai~
+        yield return new WaitForSeconds(4);
         Music.UnPause();
+        
+        yield return new WaitForSeconds(2);
+
+        PhongBat.material = phongbat_2Nha;
+        
+        nvEm.position = outOfStageForCar.position;
+        nvEmDau.position = outOfStageForCar.position;
+        nvEm.GetComponent<NavMeshAgent>().destination = chairEm2.position;
+        nvEmDau.GetComponent<NavMeshAgent>().destination = chairEm2.position;
+        
+        // nguoi chi di sang nha` em
+        yield return new WaitForSeconds(25);
+        nvChiDau.GetComponent<NavMeshAgent>().destination = nvEmDau.position;
+        nvChiDau.GetComponent<NavMeshAgent>().stoppingDistance = 2;
+
+        // 2 vc em di ra khoi san khau
+        yield return new WaitForSeconds(17);
+        nvEm.GetComponent<NavMeshAgent>().destination = outOfStage.position;
+        nvEmDau.position = dance_pos_vo.position;
+        nvEmDau.GetComponent<NavMeshAgent>().destination = outOfStage.position;
+        
+        // Nguoi anh di ra khoi san khau cung 2 vc Em
+        yield return new WaitForSeconds(5);
+        nvAnh.GetComponent<NavMeshAgent>().destination = outOfStage.position;
+
         yield return _eof;
     }
     
     IEnumerator Scene5_gold_island_act2()
     {
+        // Chim comeback
+        PhongBat.material = phongbat_Island;
+        goldBars.SetActive(true);
+        nvChim.GetComponent<NavMeshAgent>().destination = cayKhe.transform.position;
+        
+        yield return new WaitForSeconds(21);
+        
+        // nguoi chi + Chim bay toi gold_island
+        nvChim.GetComponent<NavMeshAgent>().destination = chairCoChi.position;
+        nvChiDau.GetComponent<NavMeshAgent>().destination = chairCoChi.position;
+        
         yield return _eof;
     }
     
@@ -220,4 +281,29 @@ public class ScreenPlay : MonoBehaviour
     {
         yield return _eof;
     }
+
+    #region ultility
+    public void SetSpeedX1()
+    {
+        if (!Music.isPlaying) Music.UnPause();
+            
+        Time.timeScale = 1;
+        Music.pitch = 1;
+    }
+    
+    public void SetSpeedX2()
+    {
+        if (!Music.isPlaying) Music.UnPause();
+        
+        Time.timeScale *= 2;
+        Music.pitch *= 2;
+    }
+    
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        Music.Pause();
+    }
+    #endregion
+
 }

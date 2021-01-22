@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Lesson1/Scene/1.Introduction.unity
     guid: 468a3da481842fa46830c0fe899951f4
+  - enabled: 1
+    path: Assets/TruyenCayKhe/CayKhe_screen_play.unity
+    guid: b9f503b881832ce4f8992ddceb200e08
   m_configObjects: {}
