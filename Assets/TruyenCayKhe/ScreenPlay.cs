@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -303,6 +304,13 @@ public class ScreenPlay : MonoBehaviour
     {
         Time.timeScale = 0;
         Music.Pause();
+    }
+
+    public void Reset()
+    {
+        Time.timeScale = 1;
+        Music.pitch = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     #endregion
 

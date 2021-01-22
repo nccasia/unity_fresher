@@ -21,10 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="68dfe085-2652-455e-8fbd-ab49fab11981" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity_Fresher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity_Fresher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonStarter/Materials/PolygonStarter_Mat_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonStarter/Materials/PolygonStarter_Mat_01.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/CayKhe_screen_play.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TruyenCayKhe/ScreenPlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TruyenCayKhe/ScreenPlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,8 @@
       <workItem from="1610722967603" duration="7722000" />
       <workItem from="1611071378059" duration="3851000" />
       <workItem from="1611186751451" duration="4583000" />
-      <workItem from="1611247865157" duration="21200000" />
+      <workItem from="1611247865157" duration="22229000" />
+      <workItem from="1611325841692" duration="439000" />
     </task>
     <servers />
   </component>
