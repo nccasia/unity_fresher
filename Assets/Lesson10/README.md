@@ -1,32 +1,33 @@
-# Unity UI: Common components
+# Common Design Pattern in game programming
+
+Important link: https://gameprogrammingpatterns.com/contents.html
+
 
 Table of contents
 
-1. [Button](#1-Button)
-2. [Label](#2-Label)
+1. [Singleton](#1-Singleton)
+2. [Object Pool](#2-Object%20Pool)
+3. [State Machine](#3-State%20Machine)
+4. [Observer](#4-Observer)
+5. [Spatial Partition](#5-Spatial%20Partition)
+6. [Bytecode](#6-Bytecode)
 
 ---
 
-## 1. Button
+## 1. Singleton
+https://gameprogrammingpatterns.com/singleton.html
 
-### 1.1 Var
+## 2. Object Pool
+https://gameprogrammingpatterns.com/object-pool.html
 
-#### Scope: globally scoped or function/locally scoped
+## 3. State Machine
+https://gameprogrammingpatterns.com/state.html
 
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
+## 4. Observer
+https://gameprogrammingpatterns.com/observer.html
 
+## 5. Spatial Partition
+https://gameprogrammingpatterns.com/spatial-partition.html
 
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
-}
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
-```
-
-## 2. Label
-Label is 
-
+## 6. Bytecode
+https://gameprogrammingpatterns.com/bytecode.html
