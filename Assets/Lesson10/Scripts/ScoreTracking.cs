@@ -18,7 +18,7 @@ public class ScoreTracking : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this);
-        _instance = new ScoreTracking();
+        _instance = this;
     }
 
     public int GetScore()
