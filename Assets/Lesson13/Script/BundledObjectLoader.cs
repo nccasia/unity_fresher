@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 public class BundledObjectLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
     public string assetName = "BundledSpriteObject";
     public string bundleName = "testbundle";
     void Start()
