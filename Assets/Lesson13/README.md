@@ -1,32 +1,17 @@
-# Unity UI: Common components
+# Unity UI: TexturePacker
 
 Table of contents
-
-1. [Button](#1-Button)
-2. [Label](#2-Label)
-
----
-
-## 1. Button
-
-### 1.1 Var
-
-#### Scope: globally scoped or function/locally scoped
-
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
+1. [AssetBundle](#1-AssetBundle)
 
 
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
-}
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
-```
-
-## 2. Label
-Label is 
+https://learn.unity.com/tutorial/assets-resources-and-assetbundles?_ga=2.57546730.1558499059.1615901731-1468895528.1615389225
+## 1. AssetBundle
+### 1.1 Introduction.
+### 1.2 Advantages of AssetBundles
+### 1.3 Variants
+### 1.4 Creating an AssetBundle
+### 1.5 Creating a Simple AssetBundle
+### 1.6 Loading a locally stored AssetBundle
+### 1.7 Upgrading to the Unity Addressable Asset System
+### 1.8 Conclusion
 
