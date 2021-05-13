@@ -1,32 +1,26 @@
-# Unity UI: Common components
-
-Table of contents
-
-1. [Button](#1-Button)
-2. [Label](#2-Label)
-
----
-
-## 1. Button
-
-### 1.1 Var
-
-#### Scope: globally scoped or function/locally scoped
-
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
+# Game Loop
 
 
-```javascript
-var name = 'thaibm'; // globally scoped
+## 1. Simple GameLoop
+![Demo](game-loop-simple.png)
 
-function newFunction() {
-  var age = '25'; // function scoped
+```cpp
+while (true)
+{
+  double start = getCurrentTime();
+  processInput();
+  update();
+  render();
+
+  sleep(start + MS_PER_FRAME - getCurrentTime());
+  //The sleep() here makes sure the game doesn’t run too fast if it processes a frame quickly
 }
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
 ```
 
-## 2. Label
-Label is 
+## 2. Game loop: scratch
+![Demo](gameloop_scratch.png)
+
+## 3. Unity Monobehavior life cycle
+![Demo](monobehaviour_flowchart.svg)
+
 
