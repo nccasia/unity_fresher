@@ -1,32 +1,14 @@
-# Unity UI: Common components
+# Unity: Programming Data Structure
 
 Table of contents
-
-1. [Button](#1-Button)
-2. [Label](#2-Label)
-
----
-
-## 1. Button
-
-### 1.1 Var
-
-#### Scope: globally scoped or function/locally scoped
-
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
+1. [Data Structure](#1-Data_Structure)
 
 
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
-}
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
-```
-
-## 2. Label
-Label is 
-
+## 1. Choosing the right collection type
+### 1.1 Built-in array
+### 1.2 List
+### 1.3 ArrayList
+### 1.4 Hashset
+### 1.5 Generic Dictionary
+### 1.6 Stack
+### 1.7 Queue
