@@ -1,32 +1,10 @@
-# Unity UI: Common components
+# delegate, event, Action, UnityAction
 
-Table of contents
+* Delegate: https://github.com/nccasia/ncc-net-basic/tree/master/CSharpAdvanced/Delegates
+* event: https://github.com/nccasia/ncc-net-basic/tree/master/CSharpAdvanced/Events
+* Action: https://github.com/nccasia/ncc-net-basic/tree/master/CSharpAdvanced/ActionDelegate
+* Func: https://github.com/nccasia/ncc-net-basic/tree/master/CSharpAdvanced/FuncDelegate
 
-1. [Button](#1-Button)
-2. [Label](#2-Label)
+* UnityAction: https://docs.unity3d.com/ScriptReference/Events.UnityAction.html
 
----
-
-## 1. Button
-
-### 1.1 Var
-
-#### Scope: globally scoped or function/locally scoped
-
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
-
-
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
-}
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
-```
-
-## 2. Label
-Label is 
-
+Quick note: Don't use UnityAction, it's not good for performance. Slower 2->40 times compare to .NET Action
