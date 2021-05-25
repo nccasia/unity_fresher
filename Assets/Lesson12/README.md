@@ -1,32 +1,29 @@
-# Unity UI: Common components
+# Async await & WebRequest
 
-Table of contents
+* link: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
 
-1. [Button](#1-Button)
-2. [Label](#2-Label)
-
----
-
-## 1. Button
-
-### 1.1 Var
-
-#### Scope: globally scoped or function/locally scoped
-
-`Button` là câu lệnh dùng để khai báo biến có phạm vi là **function scoped** hoặc **globally scoped**.  
-
-
-```javascript
-var name = 'thaibm'; // globally scoped
-
-function newFunction() {
-  var age = '25'; // function scoped
+* Declare
+```C#
+using System.Threading.Tasks;
+public static class ExtensionMethods
+{
+    public static TaskAwaiter GetAwaiter(this AsyncOperation asyncOp)
+    {
+        var tcs = new TaskCompletionSource<object>();
+        asyncOp.completed += obj => { tcs.SetResult(null); };
+        return ((Task)tcs.Task).GetAwaiter();
+    }
 }
-
-console.log(name); // output: thaibm
-console.log(age); // Uncaught ReferenceError: age is not defined
 ```
 
-## 2. Label
-Label is 
-
+* Usage
+```C#
+using UnityEngine.Networking;
+private async void GetGoogle()
+{
+    var getRequest = UnityWebRequest.Get("http://www.google.com");
+    await getRequest.SendWebRequest();
+    var result = getRequest.downloadHandler.text;
+    Debug.Log(result);
+}
+```
